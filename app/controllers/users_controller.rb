@@ -16,7 +16,14 @@ class UsersController < ApplicationController
   end
 
   def edit
+  	@user.update(user_params)
+  	redirect_to @user
   end
+
+  def destroy 
+  	@user.destroy
+  	redirect_to root_path
+  end 
 
   private 
 
