@@ -9,7 +9,14 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.create(user_params)
-  	redirect_to @user
+	if @user.save
+		flash[:notice] = "You signed up successfully"
+		flash[:color] = "valid"
+	else
+		flash[:notice] = "Form is invalid"
+		flash[:color] = "invalid"
+	end
+	render "new"
   end 
 
   def show
@@ -18,13 +25,14 @@ class UsersController < ApplicationController
   def edit
   end
 
-  private 
 
   	def user_params 
 	  	params.require(:user).permit(
 	  		:firstname,
 	  		:lastname,
 	  		:email,
-	  		:password_digest)
+	  		:password,
+			:password_confirmation
+			)
   	end 
 end
