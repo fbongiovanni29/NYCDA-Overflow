@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates_presence_of :firstname
   validates_presence_of :lastname
   validates :email, :presence => true, :uniqueness => true
-  #validates :password, length: { in: 6..20 }# :on => :create
+  #validates :password, length: { in: 6..20 }
   
 
 end
