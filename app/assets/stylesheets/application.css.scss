@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'normalize';
+
+ header {
+ 	padding: .5em;
+ 	width: 100%;
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	border-bottom: 1px solid #CCC;
+ 	background-color: white;
+ }
+
+nav {
+	float: right;
+	margin-right: 1em;
+
+}
+
+#main_content {
+
+
+
+}

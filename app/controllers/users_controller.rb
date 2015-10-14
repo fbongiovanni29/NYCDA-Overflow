@@ -27,6 +27,15 @@ class UsersController < ApplicationController
 
   private 
 
+    def set_user
+
+      begin 
+        @user = User.find(params[:id])
+      rescue
+        redirect_to root_path
+      end 
+    end
+
   	def user_params 
 	  	params.require(:user).permit(
 	  		:firstname,

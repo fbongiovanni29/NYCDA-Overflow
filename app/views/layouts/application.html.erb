@@ -2,19 +2,29 @@
 <html>
 <head>
   <title>Nycda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-	<nav>
-		<%= link_to 'home', root_path %> 
-		<%= link_to 'sign up', new_user_path %>
-		<%= link_to 'Questions', root_path %>
-		<%= link_to 'Blog Posts', root_path %>
-	</nav>
-</header>
+	<header>
+		<nav>
+			<%= link_to 'home', root_path %> 
+			<%= link_to 'sign up', new_user_path %>
+			<%= link_to 'Questions', root_path %>
+			<%= link_to 'Blog Posts', root_path %>
+		</nav>
+	</header>
+
+
+
+	<div id="main_content"> 
+
+		
+
+	</div>
+
 <%= yield %>
 
 </body>
