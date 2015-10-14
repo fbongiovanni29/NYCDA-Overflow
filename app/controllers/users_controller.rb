@@ -46,9 +46,29 @@ class UsersController < ApplicationController
   end
 
   def edit
+  	@user.update(user_params)
+  	redirect_to @user
   end
 
+<<<<<<< HEAD
   private
+=======
+  def destroy 
+  	@user.destroy
+  	redirect_to root_path
+  end 
+
+  private 
+>>>>>>> 2843a20bf3f03a37197e277e6aba3ad7fa8b58d5
+
+    def set_user
+
+      begin 
+        @user = User.find(params[:id])
+      rescue
+        redirect_to root_path
+      end 
+    end
 
   	def user_params 
 	  	params.require(:user).permit(
