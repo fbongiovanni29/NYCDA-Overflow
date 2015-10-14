@@ -4,16 +4,29 @@
   <title>Nycda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<header>
-		<nav>
-			<%= link_to 'home', root_path %> 
-			<%= link_to 'sign up', new_user_path %>
-			<%= link_to 'Questions', root_path %>
-			<%= link_to 'Blog Posts', root_path %>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="nav-barheader">
+					<h2>Project Overflow</h2>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><%= link_to 'Home', root_path %></li>
+						<li><%= link_to 'SignUp', new_user_path %></li>
+						<li><%= link_to 'Questions', root_path %></li>
+						<li><%= link_to 'BlogPosts', root_path %></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						
+					</ul>
+				</div>
+			</div>
 		</nav>
 	</header>
 

@@ -51,11 +51,13 @@ class UsersController < ApplicationController
   	redirect_to @user
   end
 
-  private
   def destroy 
-  	@user.destroy
-  	redirect_to root_path
+    @user.destroy
+    redirect_to root_path
   end 
+
+  private
+
 
     def set_user
 
