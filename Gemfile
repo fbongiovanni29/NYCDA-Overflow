@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#organizes userbase neatly and colorful
+gem 'awesome_print'
 #automatically generates salts for secure passwords
 gem 'bcrypt-ruby', :require => 'bcrypt' 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
