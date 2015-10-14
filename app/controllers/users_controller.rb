@@ -3,14 +3,44 @@ class UsersController < ApplicationController
   def index
   end
 
+  #sets user to new
   def new
   	@user = User.new
   end
 
+  #posts new user to the database
   def create
   	@user = User.create(user_params)
-  	redirect_to @user
+	@user.password = params[:password]
+	if @user.save
+		flash[:notice] = "You signed up successfully"
+		flash[:color] = "valid"
+	else
+		flash[:notice] = "Form is invalid"
+		flash[:color] = "invalid"
+	end
+	render "new"
   end 
+
+  #uses bcrypt to find email and match it to password
+  def login
+	@user = User.find_by_email(params[:email])
+	if @user.password == params[:password]
+		give_token
+	else
+		flash[:notice] = "Incorrect email/password combination"
+		redirect_to login_path
+	end
+  end
+
+  #assigns random password and mails it to them
+  def forgot_password
+	@user = User.find_by_email(params[:email])
+	random_password = Array.new(10).map { (65 + rand(58)).chr }.join
+	@user.passwrd = random_password
+	@user.save!
+	Mailer.create_and_deliver_password_change(@user, random_password)
+  end
 
   def show
   end
@@ -20,12 +50,16 @@ class UsersController < ApplicationController
   	redirect_to @user
   end
 
+<<<<<<< HEAD
+  private
+=======
   def destroy 
   	@user.destroy
   	redirect_to root_path
   end 
 
   private 
+>>>>>>> 2843a20bf3f03a37197e277e6aba3ad7fa8b58d5
 
     def set_user
 
@@ -41,6 +75,8 @@ class UsersController < ApplicationController
 	  		:firstname,
 	  		:lastname,
 	  		:email,
-	  		:password_digest)
+	  		:password,
+			:password_confirmation
+			)
   	end 
 end
