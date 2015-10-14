@@ -50,16 +50,13 @@ class UsersController < ApplicationController
   	redirect_to @user
   end
 
-<<<<<<< HEAD
+
   private
-=======
+
   def destroy 
   	@user.destroy
   	redirect_to root_path
   end 
-
-  private 
->>>>>>> 2843a20bf3f03a37197e277e6aba3ad7fa8b58d5
 
     def set_user
 
