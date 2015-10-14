@@ -10,8 +10,8 @@ class UsersController < ApplicationController
 
   #posts new user to the database
   def create
-  	@user = User.create(user_params)
-	@user.password = params[:password]
+  	@user = User.new(user_params)
+    
 	if @user.save
 		flash[:notice] = "You signed up successfully"
 		flash[:color] = "valid"
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 		flash[:notice] = "Form is invalid"
 		flash[:color] = "invalid"
 	end
+
 	render "new"
   end 
 
@@ -50,16 +51,11 @@ class UsersController < ApplicationController
   	redirect_to @user
   end
 
-<<<<<<< HEAD
   private
-=======
   def destroy 
   	@user.destroy
   	redirect_to root_path
   end 
-
-  private 
->>>>>>> 2843a20bf3f03a37197e277e6aba3ad7fa8b58d5
 
     def set_user
 
