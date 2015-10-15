@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#allows for file(image) upload
+gem "paperclip", "~> 4.3"
 #organizes userbase neatly and colorful
 gem 'awesome_print'
 #automatically generates salts for secure passwords

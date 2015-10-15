@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   end
 
   def show
+	  @user = User.find(params[:id])
   end
 
   def edit
@@ -67,14 +68,15 @@ class UsersController < ApplicationController
         redirect_to root_path
       end 
     end
-
+	#defines what paramaters are allowed to pass through user (as described by name)
   	def user_params 
 	  	params.require(:user).permit(
 	  		:firstname,
 	  		:lastname,
 	  		:email,
 	  		:password,
-			:password_confirmation
+			:password_confirmation,
+			:avatar
 			)
   	end 
 end
