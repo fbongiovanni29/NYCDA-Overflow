@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # attr_accessor :password
 
     has_secure_password
-  
+	  
 #validates presence of user paramaters on the create controller
   validates_presence_of :firstname, :on => :create
   validates_presence_of :lastname, :on => :create

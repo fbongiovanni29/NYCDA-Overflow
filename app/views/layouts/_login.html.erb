@@ -1,0 +1,11 @@
+<% if !current_user %>
+	<%= form_tag('/login', method: :post) do |f| %>
+		<%= label_tag :email %>
+		<%= email_field_tag :email %>
+		<%= label_tag :password %>
+		<%= password_field_tag :password %>
+		<%= submit_tag "Login" %>
+	<%end %>
+<% else %>
+	<%= link_to "Logout", logout_path, method: :delete %>
+<%end %>
