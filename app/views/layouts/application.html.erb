@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nycda</title>
+  <title>NYCDA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<header>
+		<%= render 'layouts/nav'%>
+</header>
+
 <body>
+	<br><br><br><br><br><br><br>
 
-<%= render 'layouts/nav'%>
-<br/><br/><br/><br/><br/><br/><br/>
-
-
-	<div id="main_content"> 
-	<%= flash[:notice] if flash[:notice] %>
-		
-
+	<div class="col-md-1"></div>
+	<div id="main_content" class="col-md-10"> 
+		<%= flash[:notice] if flash[:notice] %>
+		<%= yield %>
 	</div>
-
-<%= yield %>
+	<div class="col-md-1"></div>
 
 </body>
 </html>

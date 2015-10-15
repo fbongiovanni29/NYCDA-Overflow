@@ -1,6 +1,5 @@
-  <% @page_title = "Signup" %>
-  <div class="Sign_Form">
-    <h1>Sign Up</h1>
+<% if current_user == @user %>
+  <h1>Hello <%= @user.firstname %>, Edit your Account Information</h1>
     <%= form_for(:user, :url => {:controller => 'users', :action => 'update'}, :method => 'put') do |f| %>
       <p> First Name:</br> <%= f.text_field :firstname%> </p>
       <p> Last Name:</br> <%= f.text_field :lastname%> </p>
@@ -8,14 +7,9 @@
       <p> Password:</br> <%= f.password_field :password %></p>
       <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
       <%= f.file_field :avatar %>
+      <br>
       <%= f.submit :Update %>
     <% end %>
-    
-    
-    <% if @user.errors.any? %>
-      <ul class="Signup_Errors">
-      <% for message_error in @user.errors.full_messages %>
-        <li>* <%= message_error %></li>
->>    <% end %>
-      </ul>
-    <% end %>
+<% else %>
+  <p>Hello <%= current_user.firstname %>, this is not your profile page to edit</p>
+<% end %>

@@ -1,5 +1,13 @@
 class PostsController < ApplicationController
 
+	def home_page
+		if !current_user
+			render 'users/new'
+		else 
+			@posts = Post.all.order('created_at DESC')
+		end
+	end
+
 	def index
 		@posts = Post.all.order('created_at DESC')
 	end 

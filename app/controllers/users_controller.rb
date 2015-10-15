@@ -9,32 +9,29 @@ class UsersController < ApplicationController
   end
 
   #posts new user to the database
-  def create
-  	@user = User.new(user_params)
-  	if @user.save
-		#When sessions are correct uncomment
-    		flash[:notice] = "You signed up successfully"
-    		flash[:color] = "valid"
-    		redirect_to @user
-  	else
-    		flash[:notice] = "Form is invalid"
-    		flash[:color] = "invalid"
-    		render "new"
-  	end
-
-
-  end 
+def create
+	@user = User.new(user_params)
+	if @user.save
+	#When sessions are correct uncomment
+		flash[:notice] = "Please sign in to complete your registration!"
+		redirect_to @user
+	else
+		flash[:notice] = "Form is invalid"
+		flash[:color] = "invalid"
+		render "new"
+	end	
+end 
 
   #uses bcrypt to find email and match it to password
-  def login
-   @user = User.find_by_email(params[:email])
-  	if @user.password == params[:password]
-    		give_token
-  	else
-    		flash[:notice] = "Incorrect email/password combination"
-    		redirect_to login_path
-  	end
-  end
+def login
+	@user = User.find_by_email(params[:email])
+	if @user.password == params[:password]
+		give_token
+	else
+		flash[:notice] = "Incorrect email/password combination"
+		redirect_to login_path
+	end
+end
 
   #assigns random password and mails it to them
   #Hoping to get to later

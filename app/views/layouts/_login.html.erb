@@ -1,11 +1,18 @@
 <% if !current_user %>
+<%= link_to 'SignUp', new_user_path %>
 	<%= form_tag('/login', method: :post) do |f| %>
 		<%= label_tag :email %>
 		<%= email_field_tag :email %>
 		<%= label_tag :password %>
 		<%= password_field_tag :password %>
 		<%= submit_tag "Login" %>
-	<%end %>
+	<% end %>
 <% else %>
-	<%= link_to "Logout", logout_path, method: :delete %>
+	<ul class="nav navbar-nav">
+		<% if current_user%>
+		<li><%= link_to "Profile", user_path(current_user) %></li>
+
+		<% end %>
+		<li><%= link_to "Logout", logout_path, method: :delete %></li>
+	</ul>
 <%end %>
