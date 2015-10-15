@@ -1,13 +1,16 @@
 class AnswersController < ApplicationController
 
 	def create
+		# @post = Post.find(params[:post_id])
+		# @answer = post.answers.new(answer_params)
+		# @answer.user = current_user
 	end 
 
 	def update
 	end 
 
 	def destroy
-		#@answer.destroy
+		#@answer.destroyu
 	end 
 
 private 
