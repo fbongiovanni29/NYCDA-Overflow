@@ -1,11 +1,16 @@
-<h1 class="title">
-	<%= @post.title %>
-</h1>
+<h1>hello questions!</h1>
 
-<p class="date">
-	Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-</p>
+<div class="texteditor">
+	<div id="wmd-button-bar" class="wmd-panel"></div>
+	<br/>
+	<textarea rows="4" cols="50" id="wmd-input" class="wmd-panel"></textarea>
+	<br/>
+	<div id="wmd-preview" class="wmd-panel"></div>
+	<br/>
+	<div id="wmd-output" class="wmd-panel"></div>
+	<input type="submit" value="Submit Your Question!">
+</div>
 
-<p class="body">
-	<%= @post.body %>
-</p>
+	
+
+

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	
+
   def index
   end
 
@@ -46,6 +46,7 @@ end
  #shows the user with the id with the param users/:id 
  def show
    @user = User.find(params[:id])
+   @posts = @user.questions
  end
 
  #GETS the User params for the edit action

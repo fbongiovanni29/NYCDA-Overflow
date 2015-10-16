@@ -1,10 +1,23 @@
+<p><%= image_tag @user.avatar.url(:medium) %></p>
+<br>
+
 <p>First Name: <%= @user.firstname %></p>
 <br>
 <p>Last Name: <%= @user.lastname %></p>
 <br>
 <p>Email: <%= @user.email %></p>
 <br>
-<p>Picture:</p>
-<br>
 <p>Placeholder for Profile Model Information</p>
+
+
+
+
+
+
+
+<% @posts.each do |postvar| %>
+<p>Title: <%= postvar.title %></p>
+<p>Body: <%= postvar.body %></p>
+<br>
+<% end %>
 
