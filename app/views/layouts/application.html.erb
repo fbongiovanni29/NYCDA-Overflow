@@ -2,11 +2,19 @@
 <html>
 <head>
   <title>NYCDA</title>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- BOOTSTRAP -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
+  <!--    WMD    -->
+  <link rel="stylesheet" type="text/css" href="wmd.css" />
+  <script type="text/javascript" src="showdown.js"></script>
+  
 </head>
 
 <header>
