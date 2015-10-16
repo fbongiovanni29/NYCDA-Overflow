@@ -1,5 +1,4 @@
 <% if !current_user %>
-<%= link_to 'SignUp', new_user_path %>
 	<%= form_tag('/login', method: :post) do |f| %>
 		<%= label_tag :email %>
 		<%= email_field_tag :email %>

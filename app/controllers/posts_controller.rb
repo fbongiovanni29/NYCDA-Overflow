@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 			render 'users/new'
 		else 
 			@posts = Post.all.order('created_at DESC')
+			render 'posts/show'
 		end
 	end
 
