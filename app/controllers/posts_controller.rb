@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
 	def home_page
 		if !current_user
+			@user = User.new
 			render 'users/new'
 		else 
 			@posts = Post.all.order('created_at DESC')
