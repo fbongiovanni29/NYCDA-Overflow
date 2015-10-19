@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
 
 		if @user and @user.authenticate(params[:password])
 			session[:user_id] = @user.id
-			flash[:notice] = "Successfully signed in, sessions!"
-			redirect_to user_path @user
+			redirect_to root_path @user
 		else
 			flash[:notice] = "Something went wrong"
 			redirect_to root_path

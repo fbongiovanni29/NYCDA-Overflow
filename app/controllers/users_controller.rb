@@ -15,10 +15,10 @@ def create
 	#When sessions are correct uncomment
 		flash[:notice] = "Please sign in to complete your registration!"
 		redirect_to @user
+		give_token
 	else
 		flash[:notice] = "Form is invalid"
 		flash[:color] = "invalid"
-		render "new"
 	end	
 end 
 
