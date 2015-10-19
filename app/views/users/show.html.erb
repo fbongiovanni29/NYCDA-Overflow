@@ -1,26 +1,23 @@
+<div id="info">
 <p><%= image_tag @user.avatar.url(:medium) %></p>
 <br>
-
 <p>First Name: <%= @user.firstname %></p>
 <br>
 <p>Last Name: <%= @user.lastname %></p>
 <br>
 <p>Email: <%= @user.email %></p>
 <br>
-<p>Placeholder for Profile Model Information</p>
-
 
 <%= link_to 'Edit Profile', edit_user_path %>
 
-<%= link_to 'All Posts', user_posts_path(@user.id) %>
-
+</div>
 
 
 
 
 <% @posts.each do |postvar| %>
-<p>Title: <%= postvar.title %></p>
-<p>Body: <%= postvar.body %></p>
+<h1><%= link_to postvar.title, user_post_path(postvar.id, @user.id) %></h1>
+<p><%= postvar.body %></p>
 <br>
 <% end %>
 

@@ -18,6 +18,7 @@ def create
 	else
 		flash[:notice] = "Form is invalid"
 		flash[:color] = "invalid"
+		redirect_to root_path
 	end	
 end 
 
