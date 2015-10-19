@@ -14,8 +14,7 @@ def create
 	if @user.save
 	#When sessions are correct uncomment
 		flash[:notice] = "Please sign in to complete your registration!"
-		redirect_to @user
-		give_token
+		redirect_to root_path 
 	else
 		flash[:notice] = "Form is invalid"
 		flash[:color] = "invalid"

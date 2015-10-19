@@ -15,18 +15,18 @@ class PostsController < ApplicationController
 	end 
 
 	def new 
-		#@post = current_user.posts.build
 	end
 
 	def create
 		@post = Post.new(post_params)
+		@post.user_id = current_user.id
 		@post.save 
 
 		redirect_to root_path
 	end 
 
 	def show 
-		@post = Post.find(params[:id])
+		@post = Post.find(params[:user_id])
 	end 
 
 	def edit
