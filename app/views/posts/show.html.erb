@@ -8,7 +8,7 @@
 
 <h3>Answers</h3>
 <pre>
-<code class="language-markup">
+<code class="language-markup-ruby">
 <% Answer.where(post_id: params[:id]).each do |answer| %>
 	<br><p><%= Answer.find(answer).body %></p>
 <% end %>
