@@ -6,15 +6,14 @@ class AnswersController < ApplicationController
 	#this can all perhaps be added to the answers controller. I will make a compatible controller out of it
 
 	def create 
-		# @post = Post.find(params[:params_id])
-		# @answers = @post.answers.new(answer_params)
-		# @answer.user = current_user
-
-		# if @answer.save
-		# 	redirect_to @link, notice: 'Answer successfully created'
-		# else 
-		# 	render action 'new'
-		# end  
+		 @post = Post.find(params[:post_id])
+		 @answer = @post.answers.new(answer_params)
+		 @answer.post_id
+		 if @answer.save
+		 	redirect_to root_path, notice: 'Answer successfully created'
+		 else 
+		 	render action 'new'
+		 end  
 	end 
 
 	def update 
@@ -36,7 +35,7 @@ private
 		@answer = Answer.find(params[:id])
 	end
 
-	def comment_params
-		params.require(:answer).permit(:post_id, :body, :user)
+	def answer_params
+		params.require(:answer).permit(:body)
 	end 
 end 

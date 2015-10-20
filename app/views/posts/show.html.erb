@@ -1,7 +1,12 @@
 <h1><%= @post.title %></h1>
 <br>
 <p><%= @post.body %></p>
-=======
+
+<% Answer.where(post_id: params[:id]).each do |answer| %>
+	<br><%= Answer.find(answer).body %>
+<% end %>
+
+<%= render 'answers/form' %>
 
 <div id= "answers">
 	<h2> <%= @post.answers.count %> Answers</h2>
