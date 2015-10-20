@@ -1,10 +1,19 @@
 <h1><%= @post.title %></h1>
 <br>
+<pre>
+<code class="language-markup">
 <p><%= @post.body %></p>
+</code>
+</pre>
 
+<h3>Answers</h3>
+<pre>
+<code class="language-markup">
 <% Answer.where(post_id: params[:id]).each do |answer| %>
-	<br><%= Answer.find(answer).body %>
+	<br><p><%= Answer.find(answer).body %></p>
 <% end %>
+</code>
+</pre>
 
 <%= render 'answers/form' %>
 

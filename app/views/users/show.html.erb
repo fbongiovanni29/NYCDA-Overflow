@@ -17,7 +17,11 @@
 
 <% @posts.each do |postvar| %>
 <h1><%= link_to postvar.title, user_post_path(postvar.id, @user.id) %></h1>
+<pre>
+<code class="language-markeup">
 <p><%= postvar.body %></p>
+</code>
+</pre>
 <br>
 <% end %>
 
