@@ -6,6 +6,7 @@ class AnswersController < ApplicationController
 	#this can all perhaps be added to the answers controller. I will make a compatible controller out of it
 
 	def create 
+		 @user = User.find(params[:user_id])
 		 @post = Post.find(params[:post_id])
 		 @answer = @post.answers.new(answer_params)
 		 @answer.post_id
@@ -28,6 +29,18 @@ class AnswersController < ApplicationController
 		# @answer.destroy
 		#redirect_to, notice: 'Answer deleted'
 	end 
+
+	def upvote
+		    @answer = Answer.find(params[:id])
+		    @answer.upvote_by current_user
+		      redirect_to :back
+	end
+
+	def downvote
+		  @answer = Answer.find(params[:id])
+		    @answer.downvote_from current_user
+		      redirect_to :back
+	end
 
 private 
 

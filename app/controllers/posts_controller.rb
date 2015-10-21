@@ -26,6 +26,7 @@ class PostsController < ApplicationController
 	end 
 
 	def show 
+		@user = User.find(params[:user_id])
 		@post = Post.find(params[:id])
 	end 
 
@@ -33,6 +34,9 @@ class PostsController < ApplicationController
 	end 
 
 	def update 
+		@user = User.find(params[:session_id])
+		@answer.upvote_by @user
+		@answer.save
 	end 
 
 	def destroy
@@ -45,11 +49,10 @@ class PostsController < ApplicationController
 #I'm prepping them and leaving them uncommented until I get all of the 
 #votable/users compatiblity stuf straightened out
 
-  #   def upvote 
-	 #    @link = Link.find(params[:id])
-	 #    @link.upvote_by current_user
-	 #    redirect_to :back 
-  # 	end
+     def upvote 
+	     @answer.upvote_by current_user
+	     redirect_to :back 
+  	end
 
   # def downvote
 	 #    @link = Link.find(params[:id])
