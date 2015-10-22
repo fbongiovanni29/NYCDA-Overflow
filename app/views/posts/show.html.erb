@@ -9,7 +9,13 @@
 
 <h3>Answers</h3>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<br>
+=======
+<% Answer.where(post_id: params[:id]).order(:cached_votes_score => :desc).each do |answer| %>
+       <br>
+       <% @answer = Answer.find(answer) %>
+>>>>>>> parent of 53499be... threw all that erb nonsense in the controller
 =======
 <% Answer.where(post_id: params[:id]).order(:cached_votes_score => :desc).each do |answer| %>
        <br>
