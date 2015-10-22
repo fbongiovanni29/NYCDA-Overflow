@@ -17,7 +17,6 @@ def create
 		redirect_to root_path 
 	else
 		flash[:notice] = "Form is invalid"
-		flash[:color] = "invalid"
 		redirect_to root_path
 	end	
 end 
@@ -32,17 +31,6 @@ def login
 		redirect_to login_path
 	end
 end
-
-  #assigns random password and mails it to them
-  #Hoping to get to later
- # def forgot_password
- #  @user = User.find_by_email(params[:email])
- #  random_password = Array.new(10).map { (65 + rand(58)).chr }.join
- #  @user.passwrd = random_password
- #  @user.save!
- #  Mailer.create_and_deliver_password_change(@user, random_password)
- # end
-
  #shows the user with the id with the param users/:id 
  def show
    @user = User.find(params[:id])
@@ -56,7 +44,7 @@ end
 
  #PATCH/PUT User params for the update action
  def update
-  puts "UPDATING"
+ puts "UPDATING"
    @user = User.find(params[:id])
    if @user.update_attributes(user_params)
      flash[:success] = "Profile updated"

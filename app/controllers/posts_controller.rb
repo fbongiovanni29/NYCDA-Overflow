@@ -52,7 +52,7 @@ class PostsController < ApplicationController
      def upvote 
 	     @answer.upvote_by current_user
 	     redirect_to :back 
-  	end
+     end
 
   # def downvote
 	 #    @link = Link.find(params[:id])
