@@ -28,11 +28,6 @@ class PostsController < ApplicationController
 	def show 
 		@user = User.find(params[:user_id])
 		@post = Post.find(params[:id])
-		Answer.where(post_id: params[:id]).order(:cached_votes_score => :desc).each do |answer|
-			@answer = Answer.find(answer)
-		end
-		@votes = @answer.cached_votes_score
-		@body = @answer.body
 	end 
 
 	def edit
