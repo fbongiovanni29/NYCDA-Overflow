@@ -8,25 +8,10 @@
 </pre>
 
 <h3>Answers</h3>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 	<br>
-=======
 <% Answer.where(post_id: params[:id]).order(:cached_votes_score => :desc).each do |answer| %>
        <br>
        <% @answer = Answer.find(answer) %>
->>>>>>> parent of 53499be... threw all that erb nonsense in the controller
-=======
-<% Answer.where(post_id: params[:id]).order(:cached_votes_score => :desc).each do |answer| %>
-       <br>
-       <% @answer = Answer.find(answer) %>
->>>>>>> parent of 53499be... threw all that erb nonsense in the controller
-=======
-<% Answer.where(post_id: params[:id]).order(:cached_votes_score => :desc).each do |answer| %>
-       <br>
-       <% @answer = Answer.find(answer) %>
->>>>>>> parent of 53499be... threw all that erb nonsense in the controller
        <h3><%= @answer.cached_votes_score %></h3>
        <%= link_to image_tag("rsz_thumbsdown.jpg"), dislike_answer_path(@answer), :method => :put %>
        <%= link_to image_tag("rsz_upvote.jpg"), like_answer_path(@answer), :method => :put %>
