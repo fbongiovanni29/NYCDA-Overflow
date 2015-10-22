@@ -9,7 +9,7 @@
 
 <h3>Answers</h3>
 	<br>
-<% Answer.where(post_id: params[:id]).order(:cached_votes_score => :desc).each do |answer| %>
+<% @answers.each do |answer| %>
        <br>
        <% @answer = Answer.find(answer) %>
        <h3><%= @answer.cached_votes_score %></h3>
