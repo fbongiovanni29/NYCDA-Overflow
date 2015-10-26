@@ -9,17 +9,16 @@
 <% else %>
 	<ul class="nav navbar-nav">
 		<% if current_user%>
-		<li><%= link_to "Profile", user_path(current_user) %></li>
-		<li>
+		   <li>
+			<%= link_to "Profile", user_path(current_user) %>
+		   </li>
+		   <li>
 			<%= link_to "Post", new_user_post_path(current_user.id) %>
 
-		</li>
-
-				<li>
-			<%= link_to "My Posts", user_posts_path(current_user.id) %>
-
-		</li>
+		   </li>
 		<% end %>
-		<li><%= link_to "Logout", logout_path, method: :delete %></li>
+		<li>
+			<%= link_to "Logout", logout_path, method: :delete %>
+		</li>
 	</ul>
 <%end %>
