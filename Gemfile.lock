@@ -39,6 +39,12 @@ GEM
     acts_as_votable (0.10.0)
     arel (6.0.3)
     awesome_print (1.6.1)
+    aws-sdk (2.1.32)
+      aws-sdk-resources (= 2.1.32)
+    aws-sdk-core (2.1.32)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.1.32)
+      aws-sdk-core (= 2.1.32)
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
@@ -60,14 +66,13 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
-    font-awesome-rails (4.4.0.0)
-      railties (>= 3.2, < 5.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jmespath (1.1.3)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -162,10 +167,10 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   awesome_print
+  aws-sdk
   bcrypt-ruby
   byebug
   coffee-rails (~> 4.1.0)
-  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.3)
