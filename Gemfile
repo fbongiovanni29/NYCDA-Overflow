@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'aws-sdk'
 
-gem 'acts_as_votable', '~> 0.10.0'
 gem 'passenger'
 #allows for file(image) upload
 gem "paperclip", "~> 4.3"
