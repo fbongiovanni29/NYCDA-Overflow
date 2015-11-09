@@ -4,7 +4,7 @@ gem 'aws-sdk'
 
 gem 'passenger'
 #allows for file(image) upload
-gem "paperclip"
+gem "paperclip", "~> 4.3"
 #organizes userbase neatly and colorful
 gem 'awesome_print'
 #automatically generates salts for secure passwords
