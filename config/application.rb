@@ -25,13 +25,13 @@ module Nycda
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-#    config.paperclip_defaults = {
- #     :storage => :s3,
-  #    :s3_credentials => {
-   #     :bucket => ENV['nycdaoverflow'],
-    #    :access_key_id => ENV['AKIAIHEF627IPMQGK2AQ'],
-     #   :secret_access_key => ENV['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']
-     # }
-   # }
+    # config.paperclip_defaults = {
+    #   :storage => :s3,
+    #   :s3_credentials => {
+    #     :bucket => ENV['nycdaoverflow'],
+    #     :access_key_id => ENV['AKIAIHEF627IPMQGK2AQ'],
+    #     :secret_access_key => ENV['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']
+    #   }
+    # }
   end
 end
