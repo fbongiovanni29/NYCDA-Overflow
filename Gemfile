@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'aws-sdk'
 
+gem 'factory_girl_rails'
+gem 'rspec-rails'
 gem 'passenger'
 #allows for file(image) upload
 gem "paperclip", "~> 4.3"
