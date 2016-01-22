@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :users do
-  	resources :posts
+  resources :users, only: [:index, :show, :new, :create, :edit] do
+  	resources :posts, only: [:index, :new, :show]
   end
 
-  resources :answers do
+  resources :answers, only: [] do
 	  member do
 		  put "like", to: "answers#upvote"
 		  put "dislike", to: "answers#downvote"
