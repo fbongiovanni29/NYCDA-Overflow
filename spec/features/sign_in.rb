@@ -1,15 +1,16 @@
 require 'rails_helper'
 
-describe "the signin process", :type => :feature do
-  before :each do
-    User.create(:email => 'user@example.com', :password => 'password')
+RSpec.feature "Signing in" do
+  background do
+    FactoryGirl.create(:user, email: "fbongiovanni29@gmail.com", password: "password", firstname: "francis", lastname: "Bongiovanni")
   end
 
-  it "Signs in" do
-    visit 'users/new'
+  scenario "Signing in with correct credentials" do
+    visit root_path 
       within("#signin") do
-	fill_in 'Email', :with => "email"
-	fill_in 'Password', :with => "password"
+	puts User.find(1).email;
+	fill_in 'email', :with => 'fbongiovanni29@gmail.com' 
+	fill_in 'password', :with => 'password'
       end
       click_button 'Login'
       expect(current_path).to eq('/') 
