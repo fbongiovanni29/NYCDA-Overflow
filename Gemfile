@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'aws-sdk'
-
-gem 'factory_girl_rails'
-gem 'rspec-rails'
 gem 'passenger'
 #allows for file(image) upload
 gem "paperclip", "~> 4.3"
@@ -45,10 +42,14 @@ gem 'acts_as_votable', '~> 0.10.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~>3.0'
+  gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'machinist'
 end
 
 group :production do
-	gem 'pg'
+  gem 'pg'
 end
 
 group :development do

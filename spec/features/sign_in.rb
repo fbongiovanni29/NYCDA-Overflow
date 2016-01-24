@@ -6,9 +6,12 @@ describe "the signin process", :type => :feature do
   end
 
   it "Signs in" do
-      visit 'users/new'
-	within("#signin") do
-	puts "in sign in form"
+    visit 'users/new'
+      within("#signin") do
+	fill_in 'Email', :with => "email"
+	fill_in 'Password', :with => "password"
       end
-   end
+      click_button 'Login'
+      expect(current_path).to eq('/') 
+  end
 end

@@ -1,24 +1,23 @@
 <% if !current_user %>
-	<%= form_tag(sessions_path, method: :post) do |f| %>
-		<%= label_tag :email %>
-		<%= email_field_tag :email %>
-		<%= label_tag :password %>
-		<%= password_field_tag :password %>
-		<%= submit_tag "Login" %>
-	<% end %>
+  <%= form_tag(sessions_path, method: :post, :id => 'signin') do |f|  %>
+    <%= label_tag :email %>
+    <%= email_field_tag :email %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <%= submit_tag "Login" %>
+  <% end %>
 <% else %>
-	<ul class="nav navbar-nav">
-		<% if current_user%>
-		   <li>
-			<%= link_to "Profile", user_path(current_user) %>
-		   </li>
-		   <li>
-			<%= link_to "Post", new_user_post_path(current_user.id) %>
-
-		   </li>
-		<% end %>
-		<li>
-			<%= link_to "Logout", session_path(current_user.id), method: :delete %>
-		</li>
-	</ul>
+  <ul class="nav navbar-nav">
+    <% if current_user%>
+      <li>
+	<%= link_to "Profile", user_path(current_user) %>
+      </li>
+      <li>
+	<%= link_to "Post", new_user_post_path(current_user.id) %>
+      </li>
+      <% end %>
+      <li>
+	<%= link_to "Logout", session_path(current_user.id), method: :delete %>
+      </li>
+  </ul>
 <%end %>

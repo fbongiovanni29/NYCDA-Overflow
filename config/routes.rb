@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   
   #routes for users
-  resources :users, only: [:index, :show, :new, :create, :edit] do
+  resources :users, only: [:show, :new, :create, :edit] do
     #nested routes for posts
     resources :posts, only: [:index, :new, :show, :create]
   end
