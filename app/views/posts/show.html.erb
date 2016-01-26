@@ -2,33 +2,31 @@
 <h1><%= @post.title %></h1>
 <br>
 <pre>
-<code class="language-markup">
-<p><%= @post.body %></p>
-</code>
+  <code class="language-markup">
+    <p><%= @post.body %></p>
+  </code>
 </pre>
 
 <h3>Answers</h3>
 	<br>
 <% @answers.each do |answer| %>
-       <br>
-       <% @answer = Answer.find(answer) %>
-       <h3><%= @answer.cached_votes_score %></h3>
-       <%= link_to 'UPVOTE', dislike_answer_path(@answer), :method => :put %>
-       <%= link_to 'DOWNVOTE', like_answer_path(@answer), :method => :put %>
-<pre>
-<code class="language-markup-ruby">
-       <p>
-       <%= @answer.body %>
-       </p>
-</code>
-</pre>
+  <br>
+  <% @answer = Answer.find(answer) %>
+  <h3><%= @answer.cached_votes_score %></h3>
+  <%= link_to 'UPVOTE', dislike_answer_path(@answer), :method => :put %>
+  <%= link_to 'DOWNVOTE', like_answer_path(@answer), :method => :put %>
+  <pre>
+    <code class="language-markup-ruby">
+      <p>
+	<%= @answer.body %>
+      </p>
+    </code>
+  </pre>
 <% end %>
 
 <%= render 'answers/form' %>
 
 <div id= "answers">
-	<h2> <%= @post.answers.count %> Answers</h2>
-
-	<h3>Add an answer</h3>
-	
+  <h2> <%= @post.answers.count %> Answers</h2>
+  <h3>Add an answer</h3>
 </div>

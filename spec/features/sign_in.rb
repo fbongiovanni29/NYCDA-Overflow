@@ -6,13 +6,14 @@ RSpec.feature "Signing in" do
   end
 
   scenario "Signing in with correct credentials" do
-    visit root_path 
+    visit new_user_path 
+    expect(current_path).to eq('/users/new')
       within("#signin") do
-	puts User.find(1).email;
 	fill_in 'email', :with => 'fbongiovanni29@gmail.com' 
 	fill_in 'password', :with => 'password'
       end
       click_button 'Login'
-      expect(current_path).to eq('/') 
+      expect(current_path).to eq('/')
+      expect(page).to have_css('ul.nav')
   end
 end

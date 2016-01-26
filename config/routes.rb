@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   #roots to the logged in home page
-  root 'posts#home_page'
+  root 'posts#index'
 
   #creates the answer
   post '/users/:user_id/posts/:post_id' => 'answers#create'

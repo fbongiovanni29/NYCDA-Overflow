@@ -10,6 +10,9 @@ class PostsController < ApplicationController
   end
 
   def index
+    if !current_user
+      redirect_to new_user_path
+    end
     @posts = Post.all.order('created_at DESC')
   end 
 
