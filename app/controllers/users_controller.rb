@@ -9,11 +9,10 @@ class UsersController < ApplicationController
 
   #posts new user to the database
   def create
-    @user = User.new(user_params)
-    if @user.save
-    #When sessions are correct uncomment
-      flash[:notice] = "Please sign in to complete your registration!"
-      redirect_to root_path 
+    user = User.create(user_params)
+    if user.save
+      session[:user_id] = user.id
+      redirect_to root_path user 
     else
       flash[:notice] = "Form is invalid"
       redirect_to root_path

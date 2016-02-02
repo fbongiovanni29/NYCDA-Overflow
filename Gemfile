@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry-rails'
 gem 'aws-sdk'
 gem 'passenger'
 #allows for file(image) upload
