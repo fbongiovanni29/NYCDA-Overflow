@@ -7,14 +7,18 @@
   </code>
 </pre>
 
-<h3>Answers</h3>
+<h2>Answers</h2>
 	<br>
 <% @answers.each do |answer| %>
   <br>
   <% @answer = Answer.find(answer) %>
-  <h3><%= @answer.cached_votes_score %></h3>
-  <%= link_to 'UPVOTE', dislike_answer_path(@answer), :method => :put %>
-  <%= link_to 'DOWNVOTE', like_answer_path(@answer), :method => :put %>
+  <%= link_to like_answer_path(@answer), :method => :put do %>
+    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+  <% end %>
+  <h2><%= @answer.cached_votes_score %></h2>
+  <%= link_to dislike_answer_path(@answer), :method => :put do %>
+    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+  <% end %>
   <pre>
     <code class="language-markup-ruby">
       <p>
